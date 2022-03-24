@@ -1,1 +1,21 @@
-<p>header works!</p>
+<header fxLayout="row" fxLayoutAlign="space-around center">
+  <div class="left-side-container" fxLayout="row" fxLayoutAlign="center center">
+    <nav class="title" fxLayout="row" fxLayoutAlign="center center">
+      <img src="/assets/logo.jpg" class="logo" />
+      <span class="epicure">EPICURE</span>
+      <ul fxLayout="row" fxLayoutAlign="center center">
+        <li>Resturants</li>
+        <li>Chefs</li>
+      </ul>
+    </nav>
+  </div>
+  <div
+    class="right-side-container"
+    fxLayout="row"
+    fxLayoutAlign="center center"
+  >
+    <app-input></app-input>
+    <img src="/assets/user-icon.svg" class="icon" />
+    <img src="/assets/bag-icon.svg" class="icon" />
+  </div>
+</header>

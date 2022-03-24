@@ -1,0 +1,17 @@
+@import "../../styles/mixins.scss";
+
+.card {
+  width: 360px;
+  height: 357px;
+  background-color: beige;
+  margin: 0 5.5px;
+  .span-container {
+    margin: auto;
+    .span-header {
+      @include font(40px, 2.67, 600);
+    }
+    .span-body {
+      @include font(25px, 1.67);
+    }
+  }
+}
