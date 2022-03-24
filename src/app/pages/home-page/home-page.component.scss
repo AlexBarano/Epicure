@@ -12,6 +12,7 @@
     inset: 0;
     margin: auto;
     justify-content: center;
+
     span {
       width: 65%;
       text-align: center;
@@ -23,9 +24,38 @@
     object-fit: cover;
   }
 }
-.popular-restaurants {
-  @include font(30px, 1.25px);
-  margin-top: 140px;
-  margin-bottom: 42px;
-  line-height: 40px;
+
+.popular-restaurants-container {
+  .popular-restaurants-title {
+    @include font(30px, 1.25px);
+    margin-top: 140px;
+    margin-bottom: 42px;
+    line-height: 40px;
+  }
+  .all-restaurants-container {
+    margin-top: 31px;
+    margin-bottom: 87px;
+    display: flex;
+    justify-content: right;
+    margin-right: 169px;
+    .all-restaurants-title {
+      @include font(30px, 2px);
+      line-height: 40px;
+    }
+    img {
+      margin-left: 12px;
+
+      width: 24;
+      height: 18;
+    }
+  }
+}
+
+.signature-dish-container {
+  .signature-dish-title {
+    @include font(30px, 1.25px);
+    margin-top: 140px;
+    margin-bottom: 42px;
+    line-height: 40px;
+  }
 }

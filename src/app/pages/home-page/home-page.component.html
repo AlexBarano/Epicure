@@ -6,20 +6,39 @@
   </div>
   <img class="hero-image" src="/assets/hero-picture.png" alt="hero-image" />
 </div>
-<span class="popular-restaurants" fxLayout="row" fxLayoutAlign="center center"
-  >THE POPULAR RESTAURANTS IN EPICURE :</span
->
+
 <div
-  class="popular-restaurants-cards-container"
-  fxLayout="row"
-  fxLayoutAlign="center center"
+  class="popular-restaurants-container"
+  fxLayout="column"
+  fxLayoutAlign="center right"
 >
-  <app-card
-    *ngFor="let dish of dishes"
-    [dishName]="dish.name"
-    [chefName]="dish.chefName"
-    [dishImg]="dish.img"
-  ></app-card>
+  <span class="popular-restaurants-title" fxLayoutAlign="center center"
+    >THE POPULAR RESTAURANTS IN EPICURE :</span
+  >
+  <div
+    class="popular-restaurants-cards-container"
+    fxLayout="row"
+    fxLayoutAlign="center center"
+  >
+    <app-card
+      *ngFor="let dish of dishes"
+      [dishName]="dish.name"
+      [chefName]="dish.chefName"
+      [dishImg]="dish.img"
+    ></app-card>
+  </div>
+  <div class="all-restaurants-container">
+    <span class="all-restaurants-title">All Restaurants</span>
+    <img src="assets/all-restaurants-arrows.svg" alt="arrow" />
+  </div>
 </div>
 
-<span>All Restaurants</span>
+<div
+  class="signature-dish-container"
+  fxLayout="column"
+  fxLayoutAlign="center right"
+>
+  <span class="signature-dish-title" fxLayoutAlign="center center"
+    >SIGNATURE DISH OF :</span
+  >
+</div>
