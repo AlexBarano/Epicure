@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IDish } from 'src/app/models/dish.model';
+import { ICard } from 'src/app/models/card.model';
 
 @Component({
   selector: 'app-home-page',
@@ -8,29 +8,98 @@ import { IDish } from 'src/app/models/dish.model';
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
-  dishes: IDish[] = [];
+  popRestaurants: ICard[] = [];
+  signatureDishes: ICard[] = [];
+  chefsRestaurants: ICard[] = [];
+  icons: { img: string; content: string }[] = [];
   constructor() {
-    const dish1: IDish = {
+    const icon1: { img: string; content: string } = {
+      img: 'assets/spicy-icon.svg',
+      content: 'Spicy',
+    };
+    const icon2: { img: string; content: string } = {
+      img: 'assets/vegetarian.svg',
+      content: 'Vegetatian',
+    };
+    const icon3: { img: string; content: string } = {
+      img: 'assets/vegan-icon.svg',
+      content: 'Vegan',
+    };
+
+    this.icons.push(icon1);
+    this.icons.push(icon2);
+    this.icons.push(icon3);
+
+    const res1: ICard = {
       id: 0,
-      name: 'Claro',
-      chefName: 'Ran Shmueli',
+      lowerTitle: 'Claro',
+      description: 'Ran Shmueli',
       img: '/assets/claro.png',
     };
-    const dish2: IDish = {
-      id: 0,
-      name: 'Lumina',
-      chefName: 'Meir Adoni',
+    const res2: ICard = {
+      id: 1,
+      lowerTitle: 'Lumina',
+      description: 'Meir Adoni',
       img: '/assets/mizlala-gret-mullet-fillet.png',
     };
-    const dish3: IDish = {
-      id: 0,
-      name: 'Tiger Lilly',
-      chefName: 'Yanir Green',
+    const res3: ICard = {
+      id: 2,
+      lowerTitle: 'Tiger Lilly',
+      description: 'Yanir Green',
       img: '/assets/tiger-lili.png',
     };
-    this.dishes.push(dish1);
-    this.dishes.push(dish2);
-    this.dishes.push(dish3);
+    this.popRestaurants.push(res1);
+    this.popRestaurants.push(res2);
+    this.popRestaurants.push(res3);
+
+    const sigDish1: ICard = {
+      id: 0,
+      upperTitle: 'Tiger Lilly',
+      lowerTitle: 'Pad Ki Mao',
+      description:
+        'Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut',
+      img: '/assets/claro.png',
+      price: '88',
+    };
+    const sigDish2: ICard = {
+      id: 1,
+      upperTitle: 'Kab Kem',
+      lowerTitle: 'Garbanzo Frito',
+      description:
+        'Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa',
+      img: '/assets/mizlala-gret-mullet-fillet.png',
+      price: '98',
+    };
+    const sigDish3: ICard = {
+      id: 2,
+      upperTitle: 'Popina',
+      lowerTitle: 'Smoked Pizza',
+      description: 'Basil dough, cashew "butter", demi-glace, bison & radish',
+      img: '/assets/tiger-lili.png',
+      price: '65',
+    };
+    this.signatureDishes.push(sigDish1);
+    this.signatureDishes.push(sigDish2);
+    this.signatureDishes.push(sigDish3);
+
+    const chefRes1: ICard = {
+      id: 0,
+      lowerTitle: 'Onza',
+      img: '/assets/onza.png',
+    };
+    const chefRes2: ICard = {
+      id: 1,
+      lowerTitle: 'Kitchen Market',
+      img: '/assets/kitchen-market.png',
+    };
+    const chefRes3: ICard = {
+      id: 2,
+      lowerTitle: 'Mashya',
+      img: '/assets/mashya.png',
+    };
+    this.chefsRestaurants.push(chefRes1);
+    this.chefsRestaurants.push(chefRes2);
+    this.chefsRestaurants.push(chefRes3);
   }
 
   ngOnInit(): void {}

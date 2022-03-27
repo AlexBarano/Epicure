@@ -1,0 +1,6 @@
+@import "../../styles/mixins.scss";
+
+span {
+  @include font(30px, 1.25px);
+  line-height: 40px;
+}

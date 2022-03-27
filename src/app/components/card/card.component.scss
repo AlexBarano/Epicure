@@ -1,17 +1,77 @@
 @import "../../styles/mixins.scss";
 
-.card {
-  width: 360px;
-  height: 357px;
-  background-color: beige;
-  margin: 0 5.5px;
-  .span-container {
-    margin: auto;
-    .span-header {
-      @include font(40px, 2.67, 600);
+.container {
+  .upper-title {
+    margin-bottom: 23px;
+    @include font(30px, 1.77px);
+  }
+  margin-right: 11px;
+  .popular {
+    height: 357px;
+    background-color: beige;
+    width: 360px;
+    .bot-container {
+      height: 100%;
+      span {
+        text-align: center;
+      }
+      .span-header {
+        @include font(40px, 2.67, 600);
+      }
+      .span-body {
+        @include font(25px, 1.67);
+      }
     }
-    .span-body {
-      @include font(25px, 1.67);
+  }
+
+  .dish {
+    height: 654px;
+    background-color: beige;
+    width: 360px;
+    .bot-container {
+      height: 100%;
+      position: relative;
+      span {
+        text-align: center;
+      }
+      .span-header {
+        position: absolute;
+        top: 10px;
+        @include font(40px, 2.67, 600);
+        max-width: fit-content;
+        width: 210px;
+      }
+      .span-body {
+        @include font(25px, 1.67);
+        width: 260px;
+      }
+      .icon {
+        height: 30px;
+        width: 30px;
+      }
+      .price {
+        position: absolute;
+        bottom: 20px;
+        @include font(25px, 1.66px);
+      }
+    }
+  }
+
+  .restuarant {
+    height: 357px;
+    background-color: beige;
+    width: 231px;
+    .bot-container {
+      margin: auto;
+      .span-header {
+        @include font(40px, 2.67, 600);
+        text-align: center;
+        max-width: fit-content;
+      }
+      .span-body {
+        @include font(25px, 1.67);
+        text-align: center;
+      }
     }
   }
 }

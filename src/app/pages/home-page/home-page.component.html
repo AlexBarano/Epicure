@@ -12,19 +12,22 @@
   fxLayout="column"
   fxLayoutAlign="center right"
 >
-  <span class="popular-restaurants-title" fxLayoutAlign="center center"
-    >THE POPULAR RESTAURANTS IN EPICURE :</span
-  >
+  <app-title
+    marginTop="87px"
+    marginBot="42px"
+    content="THE POPULAR RESTAURANTS IN EPICURE :"
+  ></app-title>
   <div
     class="popular-restaurants-cards-container"
     fxLayout="row"
     fxLayoutAlign="center center"
   >
     <app-card
-      *ngFor="let dish of dishes"
-      [dishName]="dish.name"
-      [chefName]="dish.chefName"
-      [dishImg]="dish.img"
+      *ngFor="let res of popRestaurants"
+      [lowerTitle]="res.lowerTitle"
+      [description]="res.description"
+      [img]="res.img"
+      [type]="'popular'"
     ></app-card>
   </div>
   <div class="all-restaurants-container">
@@ -38,7 +41,101 @@
   fxLayout="column"
   fxLayoutAlign="center right"
 >
-  <span class="signature-dish-title" fxLayoutAlign="center center"
-    >SIGNATURE DISH OF :</span
+  <app-title marginBot="42px" content="SIGNTURE DISH OF :"></app-title>
+  <div
+    class="popular-restaurants-cards-container"
+    fxLayout="row"
+    fxLayoutAlign="center center"
   >
+    <app-card
+      *ngFor="let dish of signatureDishes"
+      [upperTitle]="dish.upperTitle"
+      [lowerTitle]="dish.lowerTitle"
+      [description]="dish.description"
+      [price]="dish.price"
+      [propertyIcon]="dish.propertyIcon"
+      [img]="dish.img"
+      [type]="'dish'"
+    ></app-card>
+  </div>
 </div>
+
+<div class="icon-rectangle" fxLayout="column">
+  <app-title
+    class="title"
+    marginTop="41px"
+    marginBot="24px"
+    content="THE MEANING OF OUR ICONS :"
+  ></app-title>
+  <div class="icon-container" fxLayout="row" fxLayoutAlign="center center">
+    <div *ngFor="let icon of icons" class="container" fxLayout="column">
+      <img [src]="icon.img" [alt]="icon.content" />
+      <span>{{ icon.content }}</span>
+    </div>
+  </div>
+</div>
+
+<app-title marginBot="42px" content="CHEF OF THE WEEK :"></app-title>
+<div class="chef-of-the-week-container" fxLayout="column">
+  <div class="container" fxLayout="row">
+    <img src="assets/yossi.png" alt="yossi" />
+    <p>
+      Chef Yossi Shitrit has been living and breathing his culinary dreams for
+      more than two decades, including running the kitchen in his first
+      restaurant, the fondly-remembered Violet, located in Moshav Udim.
+      Shitrit's creativity and culinary acumen born of long experience are
+      expressed in the every detail of each and every dish.
+    </p>
+  </div>
+
+  <span>Yossi's Restaurants :</span>
+  <div class="cards-container" fxLayout="row">
+    <app-card
+      *ngFor="let res of chefsRestaurants"
+      [img]="res.img"
+      [lowerTitle]="res.lowerTitle"
+      [type]="'restaurant'"
+    ></app-card>
+  </div>
+</div>
+
+<div class="about-us" fxLayout="row" fxLayoutAlign="center center">
+  <div class="left-container" fxLayout="column" fxLayoutAlign="center center">
+    <span class="title">ABOUT US :</span>
+    <div class="paragraph">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel
+        justo fermentum bibendum non eu ipsum. Cras porta malesuada eros, eget
+        blandit turpis suscipit at. Vestibulum sed massa in magna sodales porta.
+        Vivamus elit urna, dignissim a vestibulum.
+      </p>
+      <br />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel
+        justo fermentum bibendum no eu ipsum. Cras porta malesuada eros.
+      </p>
+    </div>
+    <div class="btns">
+      <button class="download-button">
+        <img src="assets/apple-logo.svg" alt="" />
+        <span
+          >Download in the
+          <br />
+          <span class="logo-title">App Store</span>
+        </span>
+      </button>
+      <button class="download-button">
+        <img src="assets/android-logo.svg" alt="" />
+        <span
+          >Download in the <br /><span class="logo-title"
+            >Goole Play</span
+          ></span
+        >
+      </button>
+    </div>
+  </div>
+  <div class="right-container">
+    <img src="assets/about-logo.png" alt="" />
+  </div>
+</div>
+<app-footer></app-footer>
