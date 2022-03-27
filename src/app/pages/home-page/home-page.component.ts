@@ -14,15 +14,15 @@ export class HomePageComponent implements OnInit {
   icons: { img: string; content: string }[] = [];
   constructor() {
     const icon1: { img: string; content: string } = {
-      img: 'assets/spicy-icon.svg',
+      img: 'assets/icons/spicy-icon.svg',
       content: 'Spicy',
     };
     const icon2: { img: string; content: string } = {
-      img: 'assets/vegetarian.svg',
+      img: 'assets/icons/vegetarian.svg',
       content: 'Vegetatian',
     };
     const icon3: { img: string; content: string } = {
-      img: 'assets/vegan-icon.svg',
+      img: 'assets/icons/vegan-icon.svg',
       content: 'Vegan',
     };
 
@@ -34,19 +34,19 @@ export class HomePageComponent implements OnInit {
       id: 0,
       lowerTitle: 'Claro',
       description: 'Ran Shmueli',
-      img: '/assets/claro.png',
+      img: '/assets/pictures/claro.png',
     };
     const res2: ICard = {
       id: 1,
       lowerTitle: 'Lumina',
       description: 'Meir Adoni',
-      img: '/assets/mizlala-gret-mullet-fillet.png',
+      img: '/assets/pictures/mizlala-gret-mullet-fillet.png',
     };
     const res3: ICard = {
       id: 2,
       lowerTitle: 'Tiger Lilly',
       description: 'Yanir Green',
-      img: '/assets/tiger-lili.png',
+      img: '/assets/pictures/tiger-lili.png',
     };
     this.popRestaurants.push(res1);
     this.popRestaurants.push(res2);
@@ -58,7 +58,7 @@ export class HomePageComponent implements OnInit {
       lowerTitle: 'Pad Ki Mao',
       description:
         'Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut',
-      img: '/assets/claro.png',
+      img: '/assets/pictures/claro.png',
       price: '88',
     };
     const sigDish2: ICard = {
@@ -67,7 +67,7 @@ export class HomePageComponent implements OnInit {
       lowerTitle: 'Garbanzo Frito',
       description:
         'Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa',
-      img: '/assets/mizlala-gret-mullet-fillet.png',
+      img: '/assets/pictures/mizlala-gret-mullet-fillet.png',
       price: '98',
     };
     const sigDish3: ICard = {
@@ -75,7 +75,7 @@ export class HomePageComponent implements OnInit {
       upperTitle: 'Popina',
       lowerTitle: 'Smoked Pizza',
       description: 'Basil dough, cashew "butter", demi-glace, bison & radish',
-      img: '/assets/tiger-lili.png',
+      img: '/assets/pictures/tiger-lili.png',
       price: '65',
     };
     this.signatureDishes.push(sigDish1);
@@ -85,17 +85,17 @@ export class HomePageComponent implements OnInit {
     const chefRes1: ICard = {
       id: 0,
       lowerTitle: 'Onza',
-      img: '/assets/onza.png',
+      img: '/assets/pictures/onza.png',
     };
     const chefRes2: ICard = {
       id: 1,
       lowerTitle: 'Kitchen Market',
-      img: '/assets/kitchen-market.png',
+      img: '/assets/pictures/kitchen-market.png',
     };
     const chefRes3: ICard = {
       id: 2,
       lowerTitle: 'Mashya',
-      img: '/assets/mashya.png',
+      img: '/assets/pictures/mashya.png',
     };
     this.chefsRestaurants.push(chefRes1);
     this.chefsRestaurants.push(chefRes2);
