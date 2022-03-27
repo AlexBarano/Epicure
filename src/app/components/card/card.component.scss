@@ -30,6 +30,7 @@
     width: 360px;
     .bot-container {
       height: 100%;
+      width: 100%;
       position: relative;
       span {
         text-align: center;
@@ -49,10 +50,18 @@
         height: 30px;
         width: 30px;
       }
-      .price {
+      .price-container {
+        width: 100%;
         position: absolute;
         bottom: 20px;
-        @include font(25px, 1.66px);
+        .line {
+          width: 100px;
+          height: 1px;
+          background-color: black;
+        }
+        .price {
+          @include font(25px, 1.66px);
+        }
       }
     }
   }

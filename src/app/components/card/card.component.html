@@ -14,7 +14,16 @@
       <span class="span-header">{{ lowerTitle }}</span>
       <span *ngIf="description" class="span-body">{{ description }}</span>
       <img *ngIf="propertyIcon" class="icon" [src]="propertyIcon" alt="icon" />
-      <span *ngIf="price" class="price">₪{{ price }}</span>
+      <div
+        *ngIf="price"
+        class="price-container"
+        fxLayout="row"
+        fxLayoutAlign="space-evenly center"
+      >
+        <div class="line"></div>
+        <span class="price">₪{{ price }}</span>
+        <div class="line"></div>
+      </div>
     </div>
   </div>
 </div>
