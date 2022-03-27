@@ -3,7 +3,14 @@
   display: flex;
   justify-content: space-around;
   position: relative;
-  input {
+  .top-input {
+    width: 415px;
+    height: 34px;
+    border-radius: 4px;
+    border: solid 0.5px;
+    padding-left: 16px;
+  }
+  .hero-input {
     width: 415px;
     height: 34px;
     border-radius: 4px;

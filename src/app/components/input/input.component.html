@@ -1,4 +1,8 @@
 <div class="input-container">
-  <input type="text" placeholder="Search for resturant cuisine, chef" />
+  <input
+    [ngClass]="type === 'top' ? 'top-input' : 'hero-input'"
+    type="text"
+    placeholder="Search for resturant cuisine, chef"
+  />
   <img src="/assets/search-icon.svg" class="input-icon" />
 </div>
