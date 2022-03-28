@@ -21,20 +21,22 @@
     }
   }
   .hero-image {
-    width: 100%;
+    width: 1440px;
     height: 696px;
     object-fit: cover;
   }
 }
 
 .popular-restaurants-container {
-  .all-restaurants-container {
+  display: flex;
+  .arrow-container {
+    //width: 100%;
     margin-top: 31px;
     margin-bottom: 87px;
     display: flex;
     justify-content: right;
-    margin-right: 169px;
-    .all-restaurants-title {
+    margin-right: 175px;
+    .arrow-title {
       @include font(30px, 2px);
       line-height: 40px;
     }
@@ -46,11 +48,8 @@
   }
 }
 
-.signature-dish-container {
-}
-
 .icon-rectangle {
-  width: 100%;
+  width: 1440px;
   height: 265px;
   background-color: #fafafa;
   opacity: 0.9;
@@ -73,7 +72,7 @@
       @include font(25px, 1.08px);
       margin: 0 69px;
       height: 292px;
-      width: 520px;
+      width: 540px;
     }
   }
   span {
@@ -85,7 +84,7 @@
 }
 .about-us {
   margin-top: 117px;
-  width: 100%;
+  width: 1440px;
   height: 526px;
   opacity: 0.9;
   background-color: #fafafa;
@@ -98,6 +97,7 @@
     margin-bottom: 20px;
   }
   .left-container {
+    padding-left: 218px;
     .paragraph {
       width: 567px;
       height: 269px;
