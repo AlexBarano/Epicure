@@ -1,16 +1,10 @@
 @import "../../../styles.scss";
-.input-container {
+@import "../../styles/mixins.scss";
+.top-input {
   display: flex;
   justify-content: space-around;
   position: relative;
-  .top-input {
-    width: 415px;
-    height: 34px;
-    border-radius: 4px;
-    border: solid 0.5px;
-    padding-left: 16px;
-  }
-  .hero-input {
+  input {
     width: 415px;
     height: 34px;
     border-radius: 4px;
@@ -18,10 +12,30 @@
     padding-left: 16px;
   }
   img {
-    width: $icon-size;
-    height: $icon-size;
+    width: 22px;
+    height: 22px;
     position: absolute;
     right: 13px;
     top: 5px;
+  }
+}
+.hero-input {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  input {
+    width: 511px;
+    height: 48px;
+    border-radius: 4px;
+    border: solid 0.6px;
+    padding-left: 71px;
+    @include font(22px, 1.57px);
+  }
+  img {
+    width: 31px;
+    height: 31px;
+    position: absolute;
+    left: 20px;
+    top: 10px;
   }
 }
