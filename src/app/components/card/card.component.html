@@ -1,17 +1,8 @@
-<div
-  class="container"
-  [ngStyle]="type === 'restaurant' ? { 'margin-right': '20px' } : {}"
->
+<div [ngClass]="type">
   <span *ngIf="upperTitle" class="upper-title" fxLayoutAlign="center center">{{
     upperTitle
   }}</span>
-  <div
-    fxLayout="column"
-    fxLayoutAlign="start center"
-    [ngClass]="
-      type === 'popular' ? 'popular' : type === 'dish' ? 'dish' : 'restuarant'
-    "
-  >
+  <div fxLayout="column" fxLayoutAlign="start center" class="card">
     <img class="image" [src]="img" alt="dish" />
     <div class="bot-container" fxLayout="column" fxLayoutAlign="center center">
       <span class="span-header">{{ lowerTitle }}</span>

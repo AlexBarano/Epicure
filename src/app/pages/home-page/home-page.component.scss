@@ -5,6 +5,7 @@
   height: 696px;
   margin-bottom: 140px;
   .rectangle {
+    gap: 18px;
     @include font(35px, 1.97px);
     position: absolute;
     width: 50%;
@@ -30,7 +31,6 @@
 .popular-restaurants-container {
   display: flex;
   .arrow-container {
-    //width: 100%;
     margin-top: 31px;
     margin-bottom: 87px;
     display: flex;
