@@ -58,7 +58,9 @@ export class HomePageComponent implements OnInit {
       lowerTitle: 'Pad Ki Mao',
       description:
         'Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut',
-      img: '/assets/pictures/claro.png',
+      img: '/assets/pictures/pad_ki_mao.png',
+      propertyIcon: '/assets/icons/card-spicy.svg',
+
       price: '88',
     };
     const sigDish2: ICard = {
@@ -67,7 +69,7 @@ export class HomePageComponent implements OnInit {
       lowerTitle: 'Garbanzo Frito',
       description:
         'Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa',
-      img: '/assets/pictures/mizlala-gret-mullet-fillet.png',
+      img: '/assets/pictures/garbanzo_frito.png',
       price: '98',
     };
     const sigDish3: ICard = {
@@ -75,7 +77,8 @@ export class HomePageComponent implements OnInit {
       upperTitle: 'Popina',
       lowerTitle: 'Smoked Pizza',
       description: 'Basil dough, cashew "butter", demi-glace, bison & radish',
-      img: '/assets/pictures/tiger-lili.png',
+      img: '/assets/pictures/smoked_pizza.png',
+      propertyIcon: '/assets/icons/card-vegan.svg',
       price: '65',
     };
     this.signatureDishes.push(sigDish1);

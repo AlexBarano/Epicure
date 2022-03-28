@@ -41,19 +41,23 @@
         @include font(40px, 2.67, 600);
         max-width: fit-content;
         width: 210px;
+        height: 142px;
       }
       .span-body {
         @include font(25px, 1.67);
         width: 260px;
+        height: 154px;
+        position: absolute;
+        bottom: 82px;
       }
       .icon {
-        height: 30px;
-        width: 30px;
+        position: absolute;
+        bottom: 53px;
       }
       .price-container {
         width: 100%;
         position: absolute;
-        bottom: 20px;
+        bottom: 11px;
         .line {
           width: 100px;
           height: 1px;
