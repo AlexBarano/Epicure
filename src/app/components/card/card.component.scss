@@ -1,11 +1,14 @@
 @import "../../styles/mixins.scss";
+@mixin cardSize($height, $width, $color) {
+  height: $height;
+  background-color: $color;
+  width: $width;
+}
 
 .popular {
   margin-right: 11px;
   .card {
-    height: 357px;
-    background-color: beige;
-    width: 360px;
+    @include cardSize(357px, 360px, beige);
     .bot-container {
       height: 100%;
       span {
@@ -27,9 +30,7 @@
     @include font(30px, 1.77px);
   }
   .card {
-    height: 654px;
-    background-color: beige;
-    width: 360px;
+    @include cardSize(654px, 360px, beige);
     .bot-container {
       height: 100%;
       width: 100%;
@@ -75,9 +76,7 @@
 .restaurant {
   margin-right: 20px;
   .card {
-    height: 357px;
-    background-color: beige;
-    width: 231px;
+    @include cardSize(357px, 231px, beige);
     .bot-container {
       margin: auto;
       .span-header {
