@@ -1,4 +1,7 @@
-<div class="container">
+<div
+  class="container"
+  [ngStyle]="type === 'restaurant' ? { 'margin-right': '20px' } : {}"
+>
   <span *ngIf="upperTitle" class="upper-title" fxLayoutAlign="center center">{{
     upperTitle
   }}</span>
