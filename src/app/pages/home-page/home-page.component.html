@@ -16,11 +16,7 @@
   fxLayout="column"
   fxLayoutAlign="center right"
 >
-  <app-title
-    marginTop="87px"
-    marginBot="42px"
-    content="THE POPULAR RESTAURANTS IN EPICURE :"
-  ></app-title>
+  <app-title content="THE POPULAR RESTAURANTS IN EPICURE :"></app-title>
   <div
     class="popular-restaurants-cards-container"
     fxLayout="row"
@@ -45,7 +41,7 @@
   fxLayout="column"
   fxLayoutAlign="center right"
 >
-  <app-title marginBot="42px" content="SIGNTURE DISH OF :"></app-title>
+  <app-title content="SIGNTURE DISH OF :"></app-title>
   <div
     class="popular-restaurants-cards-container"
     fxLayout="row"
@@ -65,12 +61,7 @@
 </div>
 
 <div class="icon-rectangle" fxLayout="column">
-  <app-title
-    class="title"
-    marginTop="41px"
-    marginBot="24px"
-    content="THE MEANING OF OUR ICONS :"
-  ></app-title>
+  <app-title class="title" content="THE MEANING OF OUR ICONS :"></app-title>
   <div class="icon-container" fxLayout="row" fxLayoutAlign="center center">
     <div *ngFor="let icon of icons" class="container" fxLayout="column">
       <img [src]="icon.img" [alt]="icon.content" />
@@ -79,7 +70,7 @@
   </div>
 </div>
 
-<app-title marginBot="42px" content="CHEF OF THE WEEK :"></app-title>
+<app-title content="CHEF OF THE WEEK :"></app-title>
 <div class="chef-of-the-week-container" fxLayout="column">
   <div class="container" fxLayout="row">
     <img src="assets/pictures/yossi.png" alt="yossi" />
