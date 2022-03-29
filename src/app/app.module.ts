@@ -10,6 +10,8 @@ import { CardComponent } from './components/card/card.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { InputComponent } from './components/input/input.component';
 import { TitleComponent } from './components/title/title.component';
+import { ChefsPageComponent } from './pages/chefs-page/chefs-page.component';
+import { RestaurantsPageComponent } from './pages/restaurants-page/restaurants-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { TitleComponent } from './components/title/title.component';
     FooterComponent,
     InputComponent,
     TitleComponent,
+    ChefsPageComponent,
+    RestaurantsPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FlexLayoutModule],
   providers: [],

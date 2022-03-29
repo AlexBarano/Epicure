@@ -48,9 +48,30 @@ export class HomePageComponent implements OnInit {
       description: 'Yanir Green',
       img: '/assets/pictures/tiger-lili.png',
     };
+    // const res4: ICard = {
+    //   id: 2,
+    //   lowerTitle: 'Tiger Lilly',
+    //   description: 'Yanir Green',
+    //   img: '/assets/pictures/tiger-lili.png',
+    // };
+    // const res5: ICard = {
+    //   id: 2,
+    //   lowerTitle: 'Tiger Lilly',
+    //   description: 'Yanir Green',
+    //   img: '/assets/pictures/tiger-lili.png',
+    // };
+    // const res6: ICard = {
+    //   id: 2,
+    //   lowerTitle: 'Tiger Lilly',
+    //   description: 'Yanir Green',
+    //   img: '/assets/pictures/tiger-lili.png',
+    // };
     this.popRestaurants.push(res1);
     this.popRestaurants.push(res2);
     this.popRestaurants.push(res3);
+    // this.popRestaurants.push(res4);
+    // this.popRestaurants.push(res5);
+    // this.popRestaurants.push(res6);
 
     const sigDish1: ICard = {
       id: 0,
