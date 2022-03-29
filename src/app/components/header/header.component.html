@@ -1,11 +1,15 @@
 <header fxLayout="row" fxLayoutAlign="space-around center">
   <div class="left-side-container" fxLayout="row" fxLayoutAlign="center center">
     <nav class="title" fxLayout="row" fxLayoutAlign="center center">
-      <img src="/assets/pictures/logo.jpg" class="logo" />
-      <span class="epicure">EPICURE</span>
+      <a routerLink="home">
+        <img src="/assets/pictures/logo.jpg" class="logo" />
+      </a>
+      <a routerLink="home">
+        <span class="epicure">EPICURE</span>
+      </a>
       <ul fxLayout="row" fxLayoutAlign="center center">
-        <li>Resturants</li>
-        <li>Chefs</li>
+        <li><a routerLink="restaurants">Restaurants</a></li>
+        <li><a routerLink="chefs">Chefs</a></li>
       </ul>
     </nav>
   </div>
