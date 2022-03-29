@@ -8,7 +8,7 @@
     gap: 18px;
     @include font(35px, 1.97px);
     position: absolute;
-    width: 50%;
+    width: 781px;
     height: 222px;
     min-width: 260px;
     background-color: rgba(255, 255, 255, 0.88);
@@ -25,6 +25,24 @@
     width: 100%;
     height: 696px;
     object-fit: cover;
+  }
+  &.mobile {
+    height: 269px;
+    .rectangle {
+      gap: 13px;
+      width: 335px;
+      height: 125px;
+      @include font(16px, 1px);
+
+      span {
+        width: 205px;
+        text-align: center;
+      }
+    }
+    .hero-image {
+      height: 269px;
+      object-fit: cover;
+    }
   }
 }
 

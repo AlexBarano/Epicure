@@ -1,6 +1,6 @@
-<div [ngClass.xs]="'mobile'" class="input-container" [ngClass]="type">
+<div [class]="type" [ngClass.xs]="'mobile'">
   <input
-    fxHide.xs
+    [fxHide.xs]="type === 'top-input'"
     type="text"
     placeholder="Search for resturant cuisine, chef"
   />
