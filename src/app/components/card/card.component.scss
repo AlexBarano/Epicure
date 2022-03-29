@@ -1,15 +1,14 @@
 @import "../../styles/mixins.scss";
+@mixin cardParams($height, $width, $color) {
+  height: $height;
+  background-color: $color;
+  width: $width;
+}
 
-.container {
-  .upper-title {
-    margin-bottom: 23px;
-    @include font(30px, 1.77px);
-  }
+.popular {
   margin-right: 11px;
-  .popular {
-    height: 357px;
-    background-color: beige;
-    width: 360px;
+  .card {
+    @include cardParams(357px, 360px, beige);
     .bot-container {
       height: 100%;
       span {
@@ -23,11 +22,15 @@
       }
     }
   }
-
-  .dish {
-    height: 654px;
-    background-color: beige;
-    width: 360px;
+}
+.dish {
+  margin-right: 11px;
+  .upper-title {
+    margin-bottom: 23px;
+    @include font(30px, 1.77px);
+  }
+  .card {
+    @include cardParams(654px, 360px, beige);
     .bot-container {
       height: 100%;
       width: 100%;
@@ -69,10 +72,11 @@
       }
     }
   }
-  .restuarant {
-    height: 357px;
-    background-color: beige;
-    width: 231px;
+}
+.restaurant {
+  margin-right: 20px;
+  .card {
+    @include cardParams(357px, 231px, beige);
     .bot-container {
       margin: auto;
       .span-header {
