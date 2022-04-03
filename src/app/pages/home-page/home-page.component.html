@@ -10,16 +10,17 @@
   />
 </div>
 
-<!--<div
+<div
   class="popular-restaurants-container"
   fxLayout="column"
   fxLayoutAlign="center right"
+  [ngClass.xs]="'mobile'"
 >
   <app-title content="THE POPULAR RESTAURANTS IN EPICURE :"></app-title>
   <div
     class="popular-restaurants-cards-container"
-    fxLayout="row"
-    fxLayoutAlign="center center"
+    fxLayoutAlign="start center"
+    fxLayoutGap="14px"
   >
     <app-card
       *ngFor="let res of popRestaurants"
@@ -29,7 +30,7 @@
       [type]="'popular'"
     ></app-card>
   </div>
-  <div class="arrow-container">
+  <div class="arrow-container" fxHide.xs>
     <span class="arrow-title">All Restaurants</span>
     <img src="assets/icons/all-restaurants-arrows.svg" alt="arrow" />
   </div>
@@ -39,12 +40,13 @@
   class="signature-dish-container"
   fxLayout="column"
   fxLayoutAlign="center right"
+  [ngClass.xs]="'mobile'"
 >
   <app-title content="SIGNTURE DISH OF :"></app-title>
   <div
     class="popular-restaurants-cards-container"
-    fxLayout="row"
-    fxLayoutAlign="center center"
+    fxLayoutAlign="start center"
+    fxLayoutGap="14px"
   >
     <app-card
       *ngFor="let dish of signatureDishes"
@@ -59,9 +61,9 @@
   </div>
 </div>
 
-<div class="icon-rectangle" fxLayout="column">
+<div class="icon-rectangle" fxLayout="column" [ngClass.xs]="'mobile'">
   <app-title class="title" content="THE MEANING OF OUR ICONS :"></app-title>
-  <div class="icon-container" fxLayout="row" fxLayoutAlign="center center">
+  <div class="icon-container" fxLayoutAlign="center center">
     <div *ngFor="let icon of icons" class="container" fxLayout="column">
       <img [src]="icon.img" [alt]="icon.content" />
       <span>{{ icon.content }}</span>
@@ -93,7 +95,7 @@
   </div>
 </div>
 
- <div class="about-us" fxLayout="row" fxLayoutAlign="start center">
+<!--<div class="about-us" fxLayout="row" fxLayoutAlign="start center">
   <div class="left-container" fxLayout="column">
     <span class="title">ABOUT US :</span>
     <div class="paragraph">

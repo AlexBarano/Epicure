@@ -28,6 +28,7 @@
   }
   &.mobile {
     height: 269px;
+    margin-bottom: 51px;
     .rectangle {
       gap: 13px;
       width: 335px;
@@ -47,13 +48,14 @@
 }
 
 .popular-restaurants-container {
-  display: flex;
+  width: fit-content;
+  margin: auto;
   .arrow-container {
     margin-top: 31px;
     margin-bottom: 87px;
-    display: flex;
     justify-content: right;
-    margin-right: 175px;
+    width: 100%;
+    display: flex;
     .arrow-title {
       @include font(30px, 2px);
       line-height: 40px;
@@ -64,8 +66,16 @@
       height: 18;
     }
   }
+  &.mobile {
+    margin-bottom: 100px;
+    padding-left: 20px;
+  }
 }
-
+.signature-dish-container {
+  width: fit-content;
+  margin: auto;
+  padding-left: 20px;
+}
 .icon-rectangle {
   width: 100%;
   height: 265px;
@@ -81,6 +91,9 @@
         margin-top: 29px;
       }
     }
+  }
+  &.mobile {
+    height: 134px;
   }
 }
 
@@ -127,7 +140,7 @@
       padding-top: 23px;
       width: 100%;
       display: flex;
-      justify-content: start;
+      justify-content: flex-start;
       align-items: center;
       .download-button {
         display: flex;

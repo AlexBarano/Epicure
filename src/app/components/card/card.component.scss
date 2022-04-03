@@ -6,7 +6,6 @@
 }
 
 .popular {
-  margin-right: 11px;
   .card {
     @include cardParams(357px, 360px, beige);
     .bot-container {
@@ -22,9 +21,26 @@
       }
     }
   }
+  &.mobile {
+    img {
+      width: 206px;
+    }
+    .card {
+      @include cardParams(338px, 206px, beige);
+      .bot-container {
+        .span-header {
+          @include font(25px, 1.67, 600);
+        }
+        .span-body {
+          @include font(20px, 1.33);
+        }
+      }
+    }
+  }
 }
+
 .dish {
-  margin-right: 11px;
+  text-align: center;
   .upper-title {
     margin-bottom: 23px;
     @include font(30px, 1.77px);
@@ -72,9 +88,38 @@
       }
     }
   }
+  &.mobile {
+    .upper-title {
+      //margin-bottom: 15px;
+      @include font(16px, 0.94px);
+    }
+    .card {
+      @include cardParams(471px, 260px, beige);
+      img {
+        width: 260px;
+      }
+      .bot-container {
+        .span-header {
+          @include font(27px, 1.84, 600);
+        }
+        .span-body {
+          @include font(17px, 1.15px);
+          bottom: 25px;
+        }
+        .icon {
+          width: 39px;
+          height: 30px;
+        }
+        .price-container {
+          .line {
+            width: 78px;
+          }
+        }
+      }
+    }
+  }
 }
 .restaurant {
-  margin-right: 20px;
   .card {
     @include cardParams(357px, 231px, beige);
     .bot-container {
