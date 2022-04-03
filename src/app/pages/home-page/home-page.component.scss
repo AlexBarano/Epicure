@@ -88,12 +88,22 @@
       margin: 0 50px;
       align-items: center;
       span {
-        margin-top: 29px;
+        margin-top: 16px;
       }
     }
   }
   &.mobile {
     height: 134px;
+    padding-top: 16px;
+    .icon-container {
+      .container {
+        margin: 0 16px;
+      }
+      img {
+        width: 33px;
+        height: 34px;
+      }
+    }
   }
 }
 
