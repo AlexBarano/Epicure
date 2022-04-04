@@ -18,6 +18,11 @@
     right: 13px;
     top: 7px;
   }
+  &.mobile {
+    img {
+      top: -10px;
+    }
+  }
 }
 
 .hero-input {
