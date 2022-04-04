@@ -112,7 +112,14 @@
   </div>
 </div>
 
-<!--<div class="about-us" fxLayout="row" fxLayoutAlign="start center">
+<div
+  class="about-us"
+  fxLayout="row"
+  fxLayout.xs="column"
+  fxLayoutAlign="center center"
+  fxLayoutGap.gt-xs="182px"
+  [ngClass.xs]="'mobile'"
+>
   <div class="left-container" fxLayout="column">
     <span class="title">ABOUT US :</span>
     <div class="paragraph">
@@ -127,6 +134,9 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel
         justo fermentum bibendum no eu ipsum. Cras porta malesuada eros.
       </p>
+    </div>
+    <div class="right-container" fxHide.gt-xs>
+      <img src="assets/pictures/about-logo.png" alt="about-logo" />
     </div>
     <div class="btns">
       <button class="download-button">
@@ -147,7 +157,7 @@
       </button>
     </div>
   </div>
-  <div class="right-container">
+  <div class="right-container" fxHide.lt-lg>
     <img src="assets/pictures/about-logo.png" alt="about-logo" />
   </div>
-</div> -->
+</div>

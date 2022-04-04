@@ -108,7 +108,7 @@
 }
 
 .chef-of-the-week-container {
-  margin: auto;
+  margin: 0 auto;
   width: fit-content;
   .container {
     margin-bottom: 59px;
@@ -153,8 +153,6 @@
   height: 526px;
   opacity: 0.9;
   background-color: #fafafa;
-  gap: 182px;
-
   .title {
     @include font(30px, 1.89px);
     width: 100%;
@@ -162,7 +160,6 @@
     margin-bottom: 20px;
   }
   .left-container {
-    padding-left: 218px;
     .paragraph {
       width: 567px;
       height: 269px;
@@ -174,8 +171,6 @@
       padding-top: 23px;
       width: 100%;
       display: flex;
-      justify-content: flex-start;
-      align-items: center;
       .download-button {
         display: flex;
         justify-content: center;
@@ -190,6 +185,42 @@
         gap: 1.5rem;
         .logo-title {
           @include font(17.2px, 1.29px);
+        }
+      }
+    }
+  }
+  &.mobile {
+    margin-top: 97px;
+    gap: 32px;
+    height: 605px;
+    .title {
+      text-align: center;
+      @include font(14px, 0.88px);
+    }
+    .left-container {
+      margin: 0 50px;
+      text-align: center;
+      align-items: center;
+      .paragraph {
+        width: 90%;
+        height: 260px;
+        text-align: center;
+        p {
+          @include font(14px, 1.08px);
+        }
+      }
+      .btns {
+        .download-button {
+          width: 127px;
+          height: 37px;
+          img {
+            width: 17px;
+            height: 22px;
+          }
+          @include font(9.2px, 0.9px);
+          .logo-title {
+            @include font(12.2px, 1.29px);
+          }
         }
       }
     }
