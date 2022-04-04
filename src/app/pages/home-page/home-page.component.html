@@ -71,9 +71,19 @@
   </div>
 </div>
 
-<!--<app-title content="CHEF OF THE WEEK :"></app-title>
-<div class="chef-of-the-week-container" fxLayout="column">
-  <div class="container" fxLayout="row">
+<div
+  class="chef-of-the-week-container"
+  fxLayout="column"
+  [ngClass.xs]="'mobile'"
+>
+  <app-title content="CHEF OF THE WEEK :"></app-title>
+  <div
+    class="container"
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutGap="70"
+    fxLayoutGap.xs="21"
+  >
     <img src="assets/pictures/yossi.png" alt="yossi" />
     <p>
       Chef Yossi Shitrit has been living and breathing his culinary dreams for
@@ -84,18 +94,25 @@
     </p>
   </div>
 
-  <span>Yossi's Restaurants :</span>
-  <div class="cards-container" fxLayout="row">
-    <app-card
-      *ngFor="let res of chefsRestaurants"
-      [img]="res.img"
-      [lowerTitle]="res.lowerTitle"
-      [type]="'restaurant'"
-    ></app-card>
+  <div class="bottom-container">
+    <span class="chefs-restaurants">Yossi's Restaurants :</span>
+    <div
+      class="cards-container"
+      fxLayout="row"
+      [ngClass.xs]="'mobile'"
+      fxLayoutGap="20px"
+    >
+      <app-card
+        *ngFor="let res of chefsRestaurants"
+        [img]="res.img"
+        [lowerTitle]="res.lowerTitle"
+        [type]="'restaurant'"
+      ></app-card>
+    </div>
   </div>
 </div>
 
- <div class="about-us" fxLayout="row" fxLayoutAlign="start center">
+<!--<div class="about-us" fxLayout="row" fxLayoutAlign="start center">
   <div class="left-container" fxLayout="column">
     <span class="title">ABOUT US :</span>
     <div class="paragraph">

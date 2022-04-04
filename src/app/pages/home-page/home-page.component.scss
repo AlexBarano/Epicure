@@ -108,19 +108,43 @@
 }
 
 .chef-of-the-week-container {
-  padding: 0 218px;
+  margin: auto;
+  width: fit-content;
   .container {
     margin-bottom: 59px;
     p {
       @include font(25px, 1.08px);
-      margin: 0 69px;
       height: 292px;
       width: 540px;
     }
   }
-  span {
-    @include font(30px, 1.29px);
-    margin-bottom: 23px;
+  .bottom-container {
+    span {
+      @include font(30px, 1.29px);
+      margin-bottom: 23px;
+    }
+  }
+  &.mobile {
+    width: 100%;
+    .container {
+      margin: 0 auto;
+      img {
+        width: 334px;
+        height: 240px;
+      }
+      p {
+        text-align: center;
+        @include font(13.5px, 1.04px);
+        width: 325px;
+        height: 182px;
+      }
+    }
+    .bottom-container {
+      padding-left: 30px;
+      .chefs-restaurants {
+        text-align: start;
+      }
+    }
   }
 }
 .about-us {
