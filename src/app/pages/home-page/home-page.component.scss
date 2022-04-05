@@ -158,6 +158,12 @@
     text-align: left;
     margin-bottom: 20px;
   }
+  .right-container {
+    .logo {
+      width: 137px;
+      height: 128px;
+    }
+  }
   .left-container {
     .paragraph {
       width: 567px;
@@ -212,7 +218,11 @@
         .download-button {
           width: 127px;
           height: 37px;
-          img {
+          .android {
+            width: 14px;
+            height: 18px;
+          }
+          .apple {
             width: 17px;
             height: 22px;
           }

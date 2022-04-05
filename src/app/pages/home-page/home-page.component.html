@@ -21,7 +21,7 @@
 
   <carousel
     [height]="338"
-    [width]="310"
+    [width]="370"
     [cellWidth]="206"
     fxHide.gt-xs
     [cellsToShow]="1"
@@ -67,7 +67,7 @@
   [ngClass.xs]="'mobile'"
 >
   <app-title content="SIGNTURE DISH OF :"></app-title>
-  <carousel [height]="480" [width]="320" [cellsToShow]="1" fxHide.gt-xs>
+  <carousel [height]="480" [width]="370" [cellsToShow]="1" fxHide.gt-xs>
     <div
       class="popular-restaurants-cards-container"
       fxLayoutAlign="start center"
@@ -141,7 +141,7 @@
     <span class="chefs-restaurants">Yossi's Restaurants :</span>
     <carousel
       [height]="357"
-      [width]="300"
+      [width]="360"
       [cellsToShow]="1"
       fxHide.gt-xs
       [arrows]="false"
@@ -201,11 +201,11 @@
       </p>
     </div>
     <div class="right-container" fxHide.gt-xs>
-      <img src="assets/pictures/about-logo.png" alt="about-logo" />
+      <img class="logo" src="assets/pictures/about-logo.png" alt="about-logo" />
     </div>
     <div class="btns" fxLayoutAlign.xs="center center">
       <button class="download-button">
-        <img src="assets/icons/apple-logo.svg" alt="apple-logo" />
+        <img class="apple" src="assets/icons/apple-logo.svg" alt="apple-logo" />
         <span
           >Download in the
           <br />
@@ -213,7 +213,11 @@
         </span>
       </button>
       <button class="download-button">
-        <img src="assets/icons/android-logo.svg" alt="android-logo" />
+        <img
+          class="android"
+          src="assets/icons/android-logo.svg"
+          alt="android-logo"
+        />
         <span
           >Download in the <br /><span class="logo-title"
             >Goole Play</span

@@ -100,7 +100,7 @@
       }
       .bot-container {
         .span-header {
-          @include font(27px, 1.84, 600);
+          @include font(27px, 1.84px, 600);
         }
         .span-body {
           @include font(17px, 1.15px);
@@ -125,13 +125,26 @@
     .bot-container {
       margin: auto;
       .span-header {
-        @include font(40px, 2.67, 600);
+        @include font(40px, 2.67px, 600);
         text-align: center;
         max-width: fit-content;
       }
       .span-body {
-        @include font(25px, 1.67);
+        @include font(25px, 1.67px);
         text-align: center;
+      }
+    }
+  }
+  &.mobile {
+    .card {
+      img {
+        height: 149px;
+      }
+      @include cardParams(237.5px, 153px, beige);
+      .bot-container {
+        .span-header {
+          @include font(20px, 1.33px, 600);
+        }
       }
     }
   }
