@@ -1,47 +1,64 @@
 @import "../../styles/mixins.scss";
 
 .hero-image-container {
-  position: relative;
   height: 696px;
   margin-bottom: 140px;
-  .rectangle {
-    gap: 18px;
-    @include font(35px, 1.97px);
-    position: absolute;
-    width: 781px;
-    height: 222px;
-    min-width: 260px;
-    background-color: rgba(255, 255, 255, 0.88);
-    inset: 0;
-    margin: auto;
-    justify-content: center;
-    span {
-      width: 437px;
-      text-align: center;
-    }
-  }
-  .hero-image {
-    width: 100%;
-    height: 696px;
-    object-fit: cover;
-  }
-  &.mobile {
-    height: 269px;
-    margin-bottom: 51px;
-    .rectangle {
-      gap: 13px;
-      width: 335px;
-      height: 125px;
-      @include font(16px, 1px);
+  .top-container {
+    position: relative;
 
+    .rectangle {
+      gap: 18px;
+      @include font(35px, 1.97px);
+      position: absolute;
+      width: 781px;
+      height: 222px;
+      min-width: 260px;
+      background-color: rgba(255, 255, 255, 0.88);
+      inset: 0;
+      margin: auto;
+      justify-content: center;
       span {
-        width: 205px;
+        width: 437px;
         text-align: center;
       }
     }
     .hero-image {
-      height: 269px;
+      width: 100%;
+      height: 696px;
       object-fit: cover;
+    }
+  }
+  &.mobile {
+    height: 395px;
+    margin-bottom: 51px;
+    .top-container {
+      height: 269px;
+      .rectangle {
+        gap: 13px;
+        width: 335px;
+        height: 125px;
+        @include font(16px, 1px);
+
+        span {
+          width: 205px;
+          text-align: center;
+        }
+      }
+      .hero-image {
+        height: 269px;
+      }
+    }
+    .bottom-container {
+      width: 100%;
+      height: 125px;
+      background-color: #fafafa;
+      .bottom-btn {
+        @include font(13px, 0.93px);
+        padding: 15px;
+        background-color: sandybrown;
+        text-align: center;
+        border: none;
+      }
     }
   }
 }

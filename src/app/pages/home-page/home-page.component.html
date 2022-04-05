@@ -1,13 +1,24 @@
 <div class="hero-image-container" [ngClass.xs]="'mobile'">
-  <div class="rectangle" fxLayout="column" fxLayoutAlign="center center">
-    <span>Epicure works with the top chef restaurants in Tel Aviv</span>
-    <app-input [type]="'hero-input'"></app-input>
+  <div class="top-container">
+    <div class="rectangle" fxLayout="column" fxLayoutAlign="center center">
+      <span>Epicure works with the top chef restaurants in Tel Aviv</span>
+      <app-input [type]="'hero-input'"></app-input>
+    </div>
+    <img
+      class="hero-image"
+      src="/assets/pictures/hero-picture.png"
+      alt="hero-image"
+    />
   </div>
-  <img
-    class="hero-image"
-    src="/assets/pictures/hero-picture.png"
-    alt="hero-image"
-  />
+  <div
+    class="bottom-container"
+    fxHide.gt-xs
+    fxLayoutAlign.xs="center center"
+    fxLayoutGap.xs="17px"
+  >
+    <button class="bottom-btn">CHEFS</button>
+    <button class="bottom-btn">RESTAURANTS</button>
+  </div>
 </div>
 
 <div
@@ -22,7 +33,6 @@
   <carousel
     [height]="338"
     [width]="screenWidth - 20"
-    [cellWidth]="206"
     fxHide.gt-xs
     [cellsToShow]="1"
     [arrows]="false"
