@@ -42,10 +42,10 @@
 .dish {
   text-align: center;
   .upper-title {
-    margin-bottom: 23px;
     @include font(30px, 1.77px);
   }
   .card {
+    margin-top: 15px;
     @include cardParams(654px, 360px, beige);
     .bot-container {
       height: 100%;
