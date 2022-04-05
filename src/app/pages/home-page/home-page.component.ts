@@ -12,7 +12,10 @@ export class HomePageComponent implements OnInit {
   signatureDishes: ICard[] = [];
   chefsRestaurants: ICard[] = [];
   icons: { img: string; content: string }[] = [];
+  screenWidth: number = 0;
+
   constructor() {
+    this.screenWidth = window.innerWidth;
     const icon1: { img: string; content: string } = {
       img: 'assets/icons/spicy-icon.svg',
       content: 'Spicy',

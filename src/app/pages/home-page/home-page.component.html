@@ -21,10 +21,11 @@
 
   <carousel
     [height]="338"
-    [width]="370"
+    [width]="screenWidth - 20"
     [cellWidth]="206"
     fxHide.gt-xs
     [cellsToShow]="1"
+    [arrows]="false"
   >
     <div
       class="popular-restaurants-cards-container"
@@ -67,7 +68,13 @@
   [ngClass.xs]="'mobile'"
 >
   <app-title content="SIGNTURE DISH OF :"></app-title>
-  <carousel [height]="480" [width]="370" [cellsToShow]="1" fxHide.gt-xs>
+  <carousel
+    [height]="495"
+    [width]="screenWidth - 20"
+    [cellsToShow]="1"
+    [arrows]="false"
+    fxHide.gt-xs
+  >
     <div
       class="popular-restaurants-cards-container"
       fxLayoutAlign="start center"
@@ -141,7 +148,7 @@
     <span class="chefs-restaurants">Yossi's Restaurants :</span>
     <carousel
       [height]="237"
-      [width]="360"
+      [width]="screenWidth - 30"
       [cellsToShow]="1"
       fxHide.gt-xs
       [arrows]="false"

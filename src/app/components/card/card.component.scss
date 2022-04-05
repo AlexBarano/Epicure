@@ -64,6 +64,7 @@
       }
       .span-body {
         @include font(25px, 1.67);
+        padding: 0 32px;
         width: 260px;
         height: 154px;
         position: absolute;
@@ -104,6 +105,7 @@
         }
         .span-body {
           @include font(17px, 1.15px);
+          padding: 0 20px;
           bottom: 25px;
         }
         .icon {
