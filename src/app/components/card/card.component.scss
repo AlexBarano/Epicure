@@ -23,7 +23,9 @@
   }
   &.mobile {
     img {
+      height: 224px;
       width: 206px;
+      object-fit: cover;
     }
     .card {
       @include cardParams(338px, 206px, beige);
@@ -93,6 +95,9 @@
     .upper-title {
       //margin-bottom: 15px;
       @include font(16px, 0.94px);
+    }
+    img {
+      height: 209px;
     }
     .card {
       @include cardParams(471px, 260px, beige);

@@ -29,21 +29,15 @@
   [ngClass.xs]="'mobile'"
 >
   <app-title content="THE POPULAR RESTAURANTS IN EPICURE :"></app-title>
-
   <carousel
-    [height]="338"
-    [width]="screenWidth - 20"
     fxHide.gt-xs
-    [cellsToShow]="1"
     [arrows]="false"
+    [width]="screenWidth - 20"
+    [cellWidth]="206"
+    [height]="340"
   >
-    <div
-      class="popular-restaurants-cards-container"
-      fxLayoutAlign="start center"
-      fxLayoutGap="14px"
-    >
+    <div class="carousel-cell" *ngFor="let res of popRestaurants">
       <app-card
-        *ngFor="let res of popRestaurants"
         [lowerTitle]="res.lowerTitle"
         [description]="res.description"
         [img]="res.img"
@@ -81,17 +75,12 @@
   <carousel
     [height]="495"
     [width]="screenWidth - 20"
-    [cellsToShow]="1"
+    [cellWidth]="260"
     [arrows]="false"
     fxHide.gt-xs
   >
-    <div
-      class="popular-restaurants-cards-container"
-      fxLayoutAlign="start center"
-      fxLayoutGap="14px"
-    >
+    <div class="carousel-cell" *ngFor="let dish of signatureDishes">
       <app-card
-        *ngFor="let dish of signatureDishes"
         [upperTitle]="dish.upperTitle"
         [lowerTitle]="dish.lowerTitle"
         [description]="dish.description"
@@ -159,18 +148,12 @@
     <carousel
       [height]="237"
       [width]="screenWidth - 30"
-      [cellsToShow]="1"
+      [cellWidth]="149"
       fxHide.gt-xs
       [arrows]="false"
     >
-      <div
-        class="cards-container"
-        fxLayout="row"
-        [ngClass.xs]="'mobile'"
-        fxLayoutGap="20px"
-      >
+      <div class="carousel-cell" *ngFor="let res of chefsRestaurants">
         <app-card
-          *ngFor="let res of chefsRestaurants"
           [img]="res.img"
           [lowerTitle]="res.lowerTitle"
           [type]="'restaurant'"
