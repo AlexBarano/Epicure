@@ -22,6 +22,7 @@ const routes: Routes = [
     component: RestaurantsPageComponent,
     data: { animation: 'restaurants-anim' },
   },
+  { path: '**', component: HomePageComponent },
 ];
 
 @NgModule({
