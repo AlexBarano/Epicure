@@ -51,30 +51,12 @@ export class HomePageComponent implements OnInit {
       description: 'Yanir Green',
       img: '/assets/pictures/tiger-lili.png',
     };
-    // const res4: ICard = {
-    //   id: 2,
-    //   lowerTitle: 'Tiger Lilly',
-    //   description: 'Yanir Green',
-    //   img: '/assets/pictures/tiger-lili.png',
-    // };
-    // const res5: ICard = {
-    //   id: 2,
-    //   lowerTitle: 'Tiger Lilly',
-    //   description: 'Yanir Green',
-    //   img: '/assets/pictures/tiger-lili.png',
-    // };
-    // const res6: ICard = {
-    //   id: 2,
-    //   lowerTitle: 'Tiger Lilly',
-    //   description: 'Yanir Green',
-    //   img: '/assets/pictures/tiger-lili.png',
-    // };
     this.popRestaurants.push(res1);
     this.popRestaurants.push(res2);
     this.popRestaurants.push(res3);
-    // this.popRestaurants.push(res4);
-    // this.popRestaurants.push(res5);
-    // this.popRestaurants.push(res6);
+    this.popRestaurants.push(res3);
+    this.popRestaurants.push(res3);
+    this.popRestaurants.push(res3);
 
     const sigDish1: ICard = {
       id: 0,
@@ -105,8 +87,12 @@ export class HomePageComponent implements OnInit {
       propertyIcon: '/assets/icons/card-vegan.svg',
       price: '65',
     };
+
     this.signatureDishes.push(sigDish1);
     this.signatureDishes.push(sigDish2);
+    this.signatureDishes.push(sigDish3);
+    this.signatureDishes.push(sigDish3);
+    this.signatureDishes.push(sigDish3);
     this.signatureDishes.push(sigDish3);
 
     const chefRes1: ICard = {
@@ -126,6 +112,9 @@ export class HomePageComponent implements OnInit {
     };
     this.chefsRestaurants.push(chefRes1);
     this.chefsRestaurants.push(chefRes2);
+    this.chefsRestaurants.push(chefRes3);
+    this.chefsRestaurants.push(chefRes3);
+    this.chefsRestaurants.push(chefRes3);
     this.chefsRestaurants.push(chefRes3);
   }
 

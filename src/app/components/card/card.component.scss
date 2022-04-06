@@ -49,6 +49,10 @@
   .card {
     margin-top: 15px;
     @include cardParams(654px, 360px, beige);
+    img {
+      width: 360px;
+      height: 290px;
+    }
     .bot-container {
       height: 100%;
       width: 100%;
@@ -58,7 +62,7 @@
       }
       .span-header {
         position: absolute;
-        top: 10px;
+        top: 5px;
         @include font(40px, 2.67, 600);
         max-width: fit-content;
         width: 210px;
@@ -66,13 +70,14 @@
       }
       .span-body {
         @include font(25px, 1.67);
-        padding: 0 32px;
-        width: 260px;
+        padding: 0 43px;
         height: 154px;
         position: absolute;
         bottom: 82px;
       }
       .icon {
+        width: 39px;
+        height: 30px;
         position: absolute;
         bottom: 53px;
       }
@@ -129,6 +134,11 @@
 .restaurant {
   .card {
     @include cardParams(357px, 231px, beige);
+
+    img {
+      width: 231px;
+      height: 224px;
+    }
     .bot-container {
       margin: auto;
       .span-header {

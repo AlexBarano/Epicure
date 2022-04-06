@@ -45,32 +45,29 @@
       ></app-card>
     </div>
   </carousel>
-  <div
-    class="popular-restaurants-cards-container"
-    fxLayoutAlign="start center"
-    fxLayoutGap="14px"
+  <carousel
     fxHide.xs
+    [arrows]="false"
+    [cellWidth]="360"
+    [height]="357"
+    [width]="360 * 3"
   >
-    <app-card
-      *ngFor="let res of popRestaurants"
-      [lowerTitle]="res.lowerTitle"
-      [description]="res.description"
-      [img]="res.img"
-      [type]="'popular'"
-    ></app-card>
-  </div>
+    <div class="carousel-cell" *ngFor="let res of popRestaurants">
+      <app-card
+        [lowerTitle]="res.lowerTitle"
+        [description]="res.description"
+        [img]="res.img"
+        [type]="'popular'"
+      ></app-card>
+    </div>
+  </carousel>
   <div class="arrow-container" fxHide.xs>
     <span class="arrow-title">All Restaurants</span>
     <img src="assets/icons/all-restaurants-arrows.svg" alt="arrow" />
   </div>
 </div>
 
-<div
-  class="signature-dish-container"
-  fxLayout="column"
-  fxLayoutAlign="center right"
-  [ngClass.xs]="'mobile'"
->
+<div class="signature-dish-container" [ngClass.xs]="'mobile'">
   <app-title content="SIGNTURE DISH OF :"></app-title>
   <carousel
     [height]="495"
@@ -91,8 +88,26 @@
       ></app-card>
     </div>
   </carousel>
-  <div
-    class="popular-restaurants-cards-container"
+  <carousel
+    [height]="705"
+    [cellWidth]="360"
+    [arrows]="false"
+    fxHide.xs
+    [width]="360 * 3"
+  >
+    <div class="carousel-cell" *ngFor="let dish of signatureDishes">
+      <app-card
+        [upperTitle]="dish.upperTitle"
+        [lowerTitle]="dish.lowerTitle"
+        [description]="dish.description"
+        [price]="dish.price"
+        [propertyIcon]="dish.propertyIcon"
+        [img]="dish.img"
+        [type]="'dish'"
+      ></app-card>
+    </div>
+  </carousel>
+  <!-- <div
     fxLayoutAlign="start center"
     fxLayoutGap="14px"
     fxHide.xs
@@ -107,7 +122,7 @@
       [img]="dish.img"
       [type]="'dish'"
     ></app-card>
-  </div>
+  </div> -->
 </div>
 
 <div class="icon-rectangle" fxLayout="column" [ngClass.xs]="'mobile'">
@@ -160,7 +175,22 @@
         ></app-card>
       </div>
     </carousel>
-    <div
+    <carousel
+      [height]="357"
+      [cellWidth]="231"
+      fxHide.xs
+      [arrows]="false"
+      [width]="240 * 3"
+    >
+      <div class="carousel-cell" *ngFor="let res of chefsRestaurants">
+        <app-card
+          [img]="res.img"
+          [lowerTitle]="res.lowerTitle"
+          [type]="'restaurant'"
+        ></app-card>
+      </div>
+    </carousel>
+    <!-- <div
       class="cards-container"
       fxLayout="row"
       [ngClass.xs]="'mobile'"
@@ -173,7 +203,7 @@
         [lowerTitle]="res.lowerTitle"
         [type]="'restaurant'"
       ></app-card>
-    </div>
+    </div> -->
   </div>
 </div>
 
@@ -200,7 +230,7 @@
         justo fermentum bibendum no eu ipsum. Cras porta malesuada eros.
       </p>
     </div>
-    <div class="right-container" fxHide.gt-xs>
+    <div fxHide.gt-xs>
       <img class="logo" src="assets/pictures/about-logo.png" alt="about-logo" />
     </div>
     <div class="btns" fxLayoutAlign.xs="center center">

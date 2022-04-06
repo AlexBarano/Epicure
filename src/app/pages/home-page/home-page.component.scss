@@ -1,4 +1,5 @@
 @import "../../styles/mixins.scss";
+@import "../../../styles.scss";
 
 .hero-image-container {
   height: 696px;
@@ -50,7 +51,7 @@
     .bottom-container {
       width: 100%;
       height: 125px;
-      background-color: #fafafa;
+      background-color: $background-color;
       .bottom-btn {
         @include font(13px, 0.93px);
         padding: 15px;
@@ -89,13 +90,15 @@
 .signature-dish-container {
   width: fit-content;
   margin: auto;
-  padding-left: 20px;
+  &.mobile {
+    margin-left: 20px;
+  }
 }
 .icon-rectangle {
   width: 100%;
   height: 265px;
   padding-top: 41px;
-  background-color: #fafafa;
+  background-color: $background-color;
   opacity: 0.9;
   margin: 87px 0 100px;
   .icon-container {
@@ -167,7 +170,7 @@
   width: 100%;
   height: 526px;
   opacity: 0.9;
-  background-color: #fafafa;
+  background-color: $background-color;
   padding-right: 120px;
   .title {
     @include font(30px, 1.89px);
