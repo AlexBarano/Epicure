@@ -1,7 +1,5 @@
-<div [ngClass]="type">
-  <span *ngIf="upperTitle" class="upper-title" fxLayoutAlign="center center">{{
-    upperTitle
-  }}</span>
+<div [class]="type" [ngClass.xs]="'mobile'">
+  <span *ngIf="upperTitle" class="upper-title">{{ upperTitle }}</span>
   <div fxLayout="column" fxLayoutAlign="start center" class="card">
     <img class="image" [src]="img" alt="dish" />
     <div class="bot-container" fxLayout="column" fxLayoutAlign="center center">

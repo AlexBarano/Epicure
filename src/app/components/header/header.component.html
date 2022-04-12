@@ -1,11 +1,30 @@
-<header fxLayout="row" fxLayoutAlign="space-around center">
-  <div class="left-side-container" fxLayout="row" fxLayoutAlign="center center">
+<header
+  [ngClass.xs]="'mobile'"
+  fxLayout="row"
+  fxLayoutAlign="space-around center"
+>
+  <div
+    class="left-side-container"
+    fxLayout="row"
+    fxLayoutAlign.xl="center center"
+    fxLayoutAlign.xs="space-between center"
+  >
+    <img
+      fxHide.gt-xs
+      class="hamburger-icon"
+      src="/assets/icons/hamburger-icon.svg"
+      alt="hamburger"
+    />
     <nav class="title" fxLayout="row" fxLayoutAlign="center center">
-      <img src="/assets/pictures/logo.jpg" class="logo" />
-      <span class="epicure">EPICURE</span>
-      <ul fxLayout="row" fxLayoutAlign="center center">
-        <li>Resturants</li>
-        <li>Chefs</li>
+      <a routerLink="home" [ngClass.xs]="'mobile'">
+        <img src="/assets/pictures/logo.jpg" class="logo" />
+      </a>
+      <a routerLink="home" fxHide.xs>
+        <span class="epicure">EPICURE</span>
+      </a>
+      <ul fxHide.xs fxLayout="row" fxLayoutAlign="center center">
+        <li><a routerLink="restaurants">Restaurants</a></li>
+        <li><a routerLink="chefs">Chefs</a></li>
       </ul>
     </nav>
   </div>
@@ -13,6 +32,7 @@
     class="right-side-container"
     fxLayout="row"
     fxLayoutAlign="center center"
+    fxLayoutAlign.xs="end center"
   >
     <app-input type="top-input"></app-input>
     <img src="/assets/icons/user-icon.svg" class="icon" />

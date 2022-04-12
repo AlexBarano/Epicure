@@ -1,51 +1,116 @@
-<app-header></app-header>
-<div class="hero-image-container">
-  <div class="rectangle" fxLayout="column" fxLayoutAlign="center center">
-    <span>Epicure works with the top chef restaurants in Tel Aviv</span>
-    <app-input [type]="'hero-input'"></app-input>
+<div class="hero-image-container" [ngClass.xs]="'mobile'">
+  <div class="top-container">
+    <div class="rectangle" fxLayout="column" fxLayoutAlign="center center">
+      <span>Epicure works with the top chef restaurants in Tel Aviv</span>
+      <app-input [type]="'hero-input'"></app-input>
+    </div>
+    <img
+      class="hero-image"
+      src="/assets/pictures/hero-picture.png"
+      alt="hero-image"
+    />
   </div>
-  <img
-    class="hero-image"
-    src="/assets/pictures/hero-picture.png"
-    alt="hero-image"
-  />
+  <div
+    class="bottom-container"
+    fxHide.gt-xs
+    fxLayoutAlign.xs="center center"
+    fxLayoutGap.xs="17px"
+  >
+    <button class="bottom-btn">CHEFS</button>
+    <button class="bottom-btn">RESTAURANTS</button>
+  </div>
 </div>
 
 <div
   class="popular-restaurants-container"
   fxLayout="column"
   fxLayoutAlign="center right"
+  fxLayoutAlign.xs="center center"
+  [ngClass.xs]="'mobile'"
 >
   <app-title content="THE POPULAR RESTAURANTS IN EPICURE :"></app-title>
-  <div
-    class="popular-restaurants-cards-container"
-    fxLayout="row"
-    fxLayoutAlign="center center"
+  <carousel
+    fxHide.gt-xs
+    [arrows]="false"
+    [width]="screenWidth - 20"
+    [cellWidth]="206"
+    [height]="340"
   >
-    <app-card
-      *ngFor="let res of popRestaurants"
-      [lowerTitle]="res.lowerTitle"
-      [description]="res.description"
-      [img]="res.img"
-      [type]="'popular'"
-    ></app-card>
-  </div>
-  <div class="arrow-container">
+    <div class="carousel-cell" *ngFor="let res of popRestaurants">
+      <app-card
+        [lowerTitle]="res.lowerTitle"
+        [description]="res.description"
+        [img]="res.img"
+        [type]="'popular'"
+      ></app-card>
+    </div>
+  </carousel>
+  <carousel
+    fxHide.xs
+    [arrows]="false"
+    [cellWidth]="360"
+    [height]="357"
+    [width]="360 * 3"
+  >
+    <div class="carousel-cell" *ngFor="let res of popRestaurants">
+      <app-card
+        [lowerTitle]="res.lowerTitle"
+        [description]="res.description"
+        [img]="res.img"
+        [type]="'popular'"
+      ></app-card>
+    </div>
+  </carousel>
+  <div class="arrow-container" fxHide.xs>
     <span class="arrow-title">All Restaurants</span>
     <img src="assets/icons/all-restaurants-arrows.svg" alt="arrow" />
   </div>
 </div>
 
-<div
-  class="signature-dish-container"
-  fxLayout="column"
-  fxLayoutAlign="center right"
->
+<div class="signature-dish-container" [ngClass.xs]="'mobile'">
   <app-title content="SIGNTURE DISH OF :"></app-title>
-  <div
-    class="popular-restaurants-cards-container"
-    fxLayout="row"
-    fxLayoutAlign="center center"
+  <carousel
+    [height]="495"
+    [width]="screenWidth - 20"
+    [cellWidth]="260"
+    [arrows]="false"
+    fxHide.gt-xs
+  >
+    <div class="carousel-cell" *ngFor="let dish of signatureDishes">
+      <app-card
+        [upperTitle]="dish.upperTitle"
+        [lowerTitle]="dish.lowerTitle"
+        [description]="dish.description"
+        [price]="dish.price"
+        [propertyIcon]="dish.propertyIcon"
+        [img]="dish.img"
+        [type]="'dish'"
+      ></app-card>
+    </div>
+  </carousel>
+  <carousel
+    [height]="705"
+    [cellWidth]="360"
+    [arrows]="false"
+    fxHide.xs
+    [width]="360 * 3"
+  >
+    <div class="carousel-cell" *ngFor="let dish of signatureDishes">
+      <app-card
+        [upperTitle]="dish.upperTitle"
+        [lowerTitle]="dish.lowerTitle"
+        [description]="dish.description"
+        [price]="dish.price"
+        [propertyIcon]="dish.propertyIcon"
+        [img]="dish.img"
+        [type]="'dish'"
+      ></app-card>
+    </div>
+  </carousel>
+  <!-- <div
+    fxLayoutAlign="start center"
+    fxLayoutGap="14px"
+    fxHide.xs
   >
     <app-card
       *ngFor="let dish of signatureDishes"
@@ -57,12 +122,12 @@
       [img]="dish.img"
       [type]="'dish'"
     ></app-card>
-  </div>
+  </div> -->
 </div>
 
-<div class="icon-rectangle" fxLayout="column">
+<div class="icon-rectangle" fxLayout="column" [ngClass.xs]="'mobile'">
   <app-title class="title" content="THE MEANING OF OUR ICONS :"></app-title>
-  <div class="icon-container" fxLayout="row" fxLayoutAlign="center center">
+  <div class="icon-container" fxLayoutAlign="center center">
     <div *ngFor="let icon of icons" class="container" fxLayout="column">
       <img [src]="icon.img" [alt]="icon.content" />
       <span>{{ icon.content }}</span>
@@ -70,9 +135,19 @@
   </div>
 </div>
 
-<app-title content="CHEF OF THE WEEK :"></app-title>
-<div class="chef-of-the-week-container" fxLayout="column">
-  <div class="container" fxLayout="row">
+<div
+  class="chef-of-the-week-container"
+  fxLayout="column"
+  [ngClass.xs]="'mobile'"
+>
+  <app-title content="CHEF OF THE WEEK :"></app-title>
+  <div
+    class="container"
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutGap="70"
+    fxLayoutGap.xs="21"
+  >
     <img src="assets/pictures/yossi.png" alt="yossi" />
     <p>
       Chef Yossi Shitrit has been living and breathing his culinary dreams for
@@ -83,18 +158,63 @@
     </p>
   </div>
 
-  <span>Yossi's Restaurants :</span>
-  <div class="cards-container" fxLayout="row">
-    <app-card
-      *ngFor="let res of chefsRestaurants"
-      [img]="res.img"
-      [lowerTitle]="res.lowerTitle"
-      [type]="'restaurant'"
-    ></app-card>
+  <div class="bottom-container">
+    <span class="chefs-restaurants">Yossi's Restaurants :</span>
+    <carousel
+      [height]="237"
+      [width]="screenWidth - 30"
+      [cellWidth]="149"
+      fxHide.gt-xs
+      [arrows]="false"
+    >
+      <div class="carousel-cell" *ngFor="let res of chefsRestaurants">
+        <app-card
+          [img]="res.img"
+          [lowerTitle]="res.lowerTitle"
+          [type]="'restaurant'"
+        ></app-card>
+      </div>
+    </carousel>
+    <carousel
+      [height]="357"
+      [cellWidth]="231"
+      fxHide.xs
+      [arrows]="false"
+      [width]="240 * 3"
+    >
+      <div class="carousel-cell" *ngFor="let res of chefsRestaurants">
+        <app-card
+          [img]="res.img"
+          [lowerTitle]="res.lowerTitle"
+          [type]="'restaurant'"
+        ></app-card>
+      </div>
+    </carousel>
+    <!-- <div
+      class="cards-container"
+      fxLayout="row"
+      [ngClass.xs]="'mobile'"
+      fxLayoutGap="20px"
+      fxHide.xs
+    >
+      <app-card
+        *ngFor="let res of chefsRestaurants"
+        [img]="res.img"
+        [lowerTitle]="res.lowerTitle"
+        [type]="'restaurant'"
+      ></app-card>
+    </div> -->
   </div>
 </div>
 
-<div class="about-us" fxLayout="row" fxLayoutAlign="start center">
+<div
+  class="about-us"
+  fxLayout="row"
+  fxLayout.xs="column"
+  fxLayoutAlign="center center"
+  fxLayoutGap.gt-xs="182px"
+  [ngClass.xs]="'mobile'"
+>
   <div class="left-container" fxLayout="column">
     <span class="title">ABOUT US :</span>
     <div class="paragraph">
@@ -110,9 +230,12 @@
         justo fermentum bibendum no eu ipsum. Cras porta malesuada eros.
       </p>
     </div>
-    <div class="btns">
+    <div fxHide.gt-md>
+      <img class="logo" src="assets/pictures/about-logo.png" alt="about-logo" />
+    </div>
+    <div class="btns" fxLayoutAlign.xs="center center">
       <button class="download-button">
-        <img src="assets/icons/apple-logo.svg" alt="apple-logo" />
+        <img class="apple" src="assets/icons/apple-logo.svg" alt="apple-logo" />
         <span
           >Download in the
           <br />
@@ -120,7 +243,11 @@
         </span>
       </button>
       <button class="download-button">
-        <img src="assets/icons/android-logo.svg" alt="android-logo" />
+        <img
+          class="android"
+          src="assets/icons/android-logo.svg"
+          alt="android-logo"
+        />
         <span
           >Download in the <br /><span class="logo-title"
             >Goole Play</span
@@ -129,8 +256,7 @@
       </button>
     </div>
   </div>
-  <div class="right-container">
+  <div class="right-container" fxHide.lt-lg>
     <img src="assets/pictures/about-logo.png" alt="about-logo" />
   </div>
 </div>
-<app-footer></app-footer>

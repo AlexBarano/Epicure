@@ -1,41 +1,77 @@
 @import "../../styles/mixins.scss";
+@import "../../../styles.scss";
 
 .hero-image-container {
-  position: relative;
   height: 696px;
   margin-bottom: 140px;
-  .rectangle {
-    gap: 18px;
-    @include font(35px, 1.97px);
-    position: absolute;
-    width: 50%;
-    height: 222px;
-    min-width: 260px;
-    background-color: rgba(255, 255, 255, 0.88);
-    inset: 0;
-    margin: auto;
-    justify-content: center;
-    span {
-      //width: 65%; //
-      width: 437px;
-      text-align: center;
+  .top-container {
+    position: relative;
+    .rectangle {
+      gap: 18px;
+      @include font(35px, 1.97px);
+      position: absolute;
+      width: 781px;
+      height: 222px;
+      min-width: 260px;
+      background-color: rgba(255, 255, 255, 0.88);
+      inset: 0;
+      margin: auto;
+      justify-content: center;
+      span {
+        width: 437px;
+        text-align: center;
+      }
+    }
+    .hero-image {
+      width: 100%;
+      height: 696px;
+      object-fit: cover;
     }
   }
-  .hero-image {
-    width: 100%;
-    height: 696px;
-    object-fit: cover;
+  &.mobile {
+    height: 395px;
+    margin-bottom: 51px;
+    .top-container {
+      height: 269px;
+      .rectangle {
+        gap: 13px;
+        width: 335px;
+        height: 125px;
+        @include font(16px, 1px);
+
+        span {
+          width: 205px;
+          text-align: center;
+        }
+      }
+      .hero-image {
+        height: 269px;
+      }
+    }
+    .bottom-container {
+      width: 100%;
+      height: 125px;
+      background-color: $background-color;
+      .bottom-btn {
+        @include font(13px, 0.93px);
+        padding: 15px;
+        background-color: sandybrown;
+        text-align: center;
+        border: none;
+      }
+    }
   }
 }
 
 .popular-restaurants-container {
-  display: flex;
+  width: fit-content;
+  margin: auto;
   .arrow-container {
     margin-top: 31px;
     margin-bottom: 87px;
-    display: flex;
     justify-content: right;
-    margin-right: 175px;
+    width: 100%;
+    display: flex;
     .arrow-title {
       @include font(30px, 2px);
       line-height: 40px;
@@ -46,13 +82,23 @@
       height: 18;
     }
   }
+  &.mobile {
+    margin-bottom: 100px;
+    padding-left: 20px;
+  }
 }
-
+.signature-dish-container {
+  width: fit-content;
+  margin: auto;
+  &.mobile {
+    margin-left: 20px;
+  }
+}
 .icon-rectangle {
   width: 100%;
   height: 265px;
   padding-top: 41px;
-  background-color: #fafafa;
+  background-color: $background-color;
   opacity: 0.9;
   margin: 87px 0 100px;
   .icon-container {
@@ -60,26 +106,63 @@
       margin: 0 50px;
       align-items: center;
       span {
-        margin-top: 29px;
+        margin-top: 16px;
+      }
+    }
+  }
+  &.mobile {
+    height: 134px;
+    padding-top: 16px;
+    .icon-container {
+      .container {
+        margin: 0 16px;
+      }
+      img {
+        width: 33px;
+        height: 34px;
       }
     }
   }
 }
 
 .chef-of-the-week-container {
-  padding: 0 218px;
+  margin: 0 auto;
+  width: fit-content;
   .container {
     margin-bottom: 59px;
     p {
       @include font(25px, 1.08px);
-      margin: 0 69px;
       height: 292px;
       width: 540px;
     }
   }
-  span {
-    @include font(30px, 1.29px);
-    margin-bottom: 23px;
+  .bottom-container {
+    span {
+      @include font(30px, 1.29px);
+      margin-bottom: 23px;
+    }
+  }
+  &.mobile {
+    width: 100%;
+    .container {
+      margin: 0 auto;
+      img {
+        width: 334px;
+        height: 240px;
+      }
+      p {
+        text-align: center;
+        @include font(13.5px, 1.04px);
+        width: 325px;
+        height: 182px;
+      }
+    }
+    .bottom-container {
+      padding-left: 30px;
+      .chefs-restaurants {
+        text-align: start;
+      }
+    }
   }
 }
 .about-us {
@@ -87,30 +170,33 @@
   width: 100%;
   height: 526px;
   opacity: 0.9;
-  background-color: #fafafa;
-  gap: 182px;
-
+  background-color: $background-color;
+  padding-right: 120px;
   .title {
     @include font(30px, 1.89px);
     width: 100%;
     text-align: left;
     margin-bottom: 20px;
   }
+  .right-container {
+    .logo {
+      width: 137px;
+      height: 128px;
+    }
+  }
   .left-container {
-    padding-left: 218px;
     .paragraph {
       width: 567px;
       height: 269px;
       p {
         @include font(22px, 1.69px);
+        // font-size: clamp(14px, 2.5vw, 22px);
       }
     }
     .btns {
       padding-top: 23px;
       width: 100%;
       display: flex;
-      justify-content: start;
-      align-items: center;
       .download-button {
         display: flex;
         justify-content: center;
@@ -125,6 +211,47 @@
         gap: 1.5rem;
         .logo-title {
           @include font(17.2px, 1.29px);
+        }
+      }
+    }
+  }
+  &.mobile {
+    margin-top: 97px;
+    gap: 32px;
+    height: 605px;
+    padding: 0;
+    .title {
+      text-align: center;
+      @include font(14px, 0.88px);
+    }
+    .left-container {
+      margin: 0 50px;
+      text-align: center;
+      align-items: center;
+      .paragraph {
+        width: 90%;
+        height: 260px;
+        text-align: center;
+        p {
+          @include font(14px, 1.08px);
+        }
+      }
+      .btns {
+        .download-button {
+          width: 127px;
+          height: 37px;
+          .android {
+            width: 14px;
+            height: 18px;
+          }
+          .apple {
+            width: 17px;
+            height: 22px;
+          }
+          @include font(9.2px, 0.9px);
+          .logo-title {
+            @include font(12.2px, 1.29px);
+          }
         }
       }
     }

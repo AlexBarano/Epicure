@@ -12,7 +12,10 @@ export class HomePageComponent implements OnInit {
   signatureDishes: ICard[] = [];
   chefsRestaurants: ICard[] = [];
   icons: { img: string; content: string }[] = [];
+  screenWidth: number = 0;
+
   constructor() {
+    this.screenWidth = window.innerWidth;
     const icon1: { img: string; content: string } = {
       img: 'assets/icons/spicy-icon.svg',
       content: 'Spicy',
@@ -51,6 +54,9 @@ export class HomePageComponent implements OnInit {
     this.popRestaurants.push(res1);
     this.popRestaurants.push(res2);
     this.popRestaurants.push(res3);
+    this.popRestaurants.push(res3);
+    this.popRestaurants.push(res3);
+    this.popRestaurants.push(res3);
 
     const sigDish1: ICard = {
       id: 0,
@@ -81,8 +87,12 @@ export class HomePageComponent implements OnInit {
       propertyIcon: '/assets/icons/card-vegan.svg',
       price: '65',
     };
+
     this.signatureDishes.push(sigDish1);
     this.signatureDishes.push(sigDish2);
+    this.signatureDishes.push(sigDish3);
+    this.signatureDishes.push(sigDish3);
+    this.signatureDishes.push(sigDish3);
     this.signatureDishes.push(sigDish3);
 
     const chefRes1: ICard = {
@@ -102,6 +112,9 @@ export class HomePageComponent implements OnInit {
     };
     this.chefsRestaurants.push(chefRes1);
     this.chefsRestaurants.push(chefRes2);
+    this.chefsRestaurants.push(chefRes3);
+    this.chefsRestaurants.push(chefRes3);
+    this.chefsRestaurants.push(chefRes3);
     this.chefsRestaurants.push(chefRes3);
   }
 
