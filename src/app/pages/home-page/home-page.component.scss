@@ -190,6 +190,7 @@
       height: 269px;
       p {
         @include font(22px, 1.69px);
+        // font-size: clamp(14px, 2.5vw, 22px);
       }
     }
     .btns {
