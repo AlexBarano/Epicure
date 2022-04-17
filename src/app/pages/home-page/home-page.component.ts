@@ -13,6 +13,9 @@ export class HomePageComponent implements OnInit {
   popRestaurants: ICard[] = [];
   signatureDishes: ICard[] = [];
   chefsRestaurants: ICard[] = [];
+  // make this observeable
+  // after this changes it emits
+  // so then whoever subs needs to update content
   chefOfTheWeek: IChefOfTheWeek = {
     name: '',
     image: '',
