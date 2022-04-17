@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +34,7 @@ import { RestaurantsPageComponent } from './pages/restaurants-page/restaurants-p
     FlexLayoutModule,
     BrowserAnimationsModule,
     IvyCarouselModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
