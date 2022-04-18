@@ -107,22 +107,6 @@
       ></app-card>
     </div>
   </carousel>
-  <!-- <div
-    fxLayoutAlign="start center"
-    fxLayoutGap="14px"
-    fxHide.xs
-  >
-    <app-card
-      *ngFor="let dish of signatureDishes"
-      [upperTitle]="dish.upperTitle"
-      [lowerTitle]="dish.lowerTitle"
-      [description]="dish.description"
-      [price]="dish.price"
-      [propertyIcon]="dish.propertyIcon"
-      [img]="dish.img"
-      [type]="'dish'"
-    ></app-card>
-  </div> -->
 </div>
 
 <div class="icon-rectangle" fxLayout="column" [ngClass.xs]="'mobile'">
@@ -139,6 +123,7 @@
   class="chef-of-the-week-container"
   fxLayout="column"
   [ngClass.xs]="'mobile'"
+  *ngIf="chefOfTheWeek"
 >
   <app-title content="CHEF OF THE WEEK :"></app-title>
   <div

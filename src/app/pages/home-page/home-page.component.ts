@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { ICard } from 'src/app/models/card.model';
 import { IChefOfTheWeek } from 'src/app/models/chefOfTheWeek.model';
-import { DataService } from 'src/app/services/data.service';
+import { ChefsService } from 'src/app/services/chefs.service';
+import { DishesService } from 'src/app/services/dishes.service';
+import { RestaurantsService } from 'src/app/services/restaurants.service';
 
 @Component({
   selector: 'app-home-page',
@@ -16,31 +18,15 @@ export class HomePageComponent implements OnInit {
   // make this observeable
   // after this changes it emits
   // so then whoever subs needs to update content
-  chefOfTheWeek: IChefOfTheWeek = {
-    name: '',
-    image: '',
-    description: '',
-    id: '',
-  };
+  chefOfTheWeek!: IChefOfTheWeek;
   icons: { img: string; content: string }[] = [];
   screenWidth: number = 0;
 
-  constructor(private dataService: DataService) {
-    this.dataService.getChefOfTheWeek().subscribe((chef) => {
-      this.chefOfTheWeek = chef;
-    });
-    this.dataService.getPopularRestaurant().subscribe((popularRestaurants) => {
-      this.popRestaurants = popularRestaurants;
-    });
-    this.dataService
-      .getChefsRestaurants(this.chefOfTheWeek.id)
-      .subscribe((chefsRestaurants) => {
-        this.chefsRestaurants = chefsRestaurants;
-      });
-    this.dataService.getSignatureDishes().subscribe((signatureDishes) => {
-      this.signatureDishes = signatureDishes;
-    });
-
+  constructor(
+    private chefsService: ChefsService,
+    private dishesService: DishesService,
+    private restautantsService: RestaurantsService
+  ) {
     this.screenWidth = window.innerWidth;
     const icon1: { img: string; content: string } = {
       img: 'assets/icons/spicy-icon.svg',
@@ -58,29 +44,27 @@ export class HomePageComponent implements OnInit {
     this.icons.push(icon1);
     this.icons.push(icon2);
     this.icons.push(icon3);
-
-    // const chefRes1: ICard = {
-    //   id: 0,
-    //   lowerTitle: 'Onza',
-    //   img: '/assets/pictures/onza.png',
-    // };
-    // const chefRes2: ICard = {
-    //   id: 1,
-    //   lowerTitle: 'Kitchen Market',
-    //   img: '/assets/pictures/kitchen-market.png',
-    // };
-    // const chefRes3: ICard = {
-    //   id: 2,
-    //   lowerTitle: 'Mashya',
-    //   img: '/assets/pictures/mashya.png',
-    // };
-    // this.chefsRestaurants.push(chefRes1);
-    // this.chefsRestaurants.push(chefRes2);
-    // this.chefsRestaurants.push(chefRes3);
-    // this.chefsRestaurants.push(chefRes3);
-    // this.chefsRestaurants.push(chefRes3);
-    // this.chefsRestaurants.push(chefRes3);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.chefsService.getChefOfTheWeek().subscribe((chef: IChefOfTheWeek) => {
+      this.chefOfTheWeek = chef;
+      this.chefsService
+        .getChefsRestaurants(this.chefOfTheWeek.id)
+        .subscribe((chefsRestaurants: ICard[]) => {
+          this.chefsRestaurants = chefsRestaurants;
+        });
+    });
+    this.restautantsService
+      .getPopularRestaurant()
+      .subscribe((popularRestaurants: ICard[]) => {
+        this.popRestaurants = popularRestaurants;
+      });
+
+    this.dishesService
+      .getSignatureDishes()
+      .subscribe((signatureDishes: ICard[]) => {
+        this.signatureDishes = signatureDishes;
+      });
+  }
 }
