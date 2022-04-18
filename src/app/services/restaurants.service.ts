@@ -10,16 +10,11 @@ export class RestaurantsService {
 
   getPopularRestaurant(): Observable<ICard[]> {
     return this.http
-      .get('http://localhost:3500/api/v1/restaurants')
+      .get('http://localhost:3500/api/v1/restaurants/popular-restaurants')
       .pipe(
         map((restaurantsData: any) => {
-          const allRestaurants: any[] = restaurantsData.restaurants;
-          const restaurants: ICard[] = allRestaurants.filter((restaurant) => {
-            if (restaurant.isPopular) {
-              return restaurant;
-            }
-          });
-          return restaurants;
+          const popularRestaurants: any[] = restaurantsData.popularRestaurants;
+          return popularRestaurants;
         })
       )
       .pipe(
