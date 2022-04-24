@@ -8,6 +8,11 @@
 .popular {
   .card {
     @include cardParams(357px, 360px, beige);
+    img {
+      width: 360px;
+      height: 223px;
+      object-fit: cover;
+    }
     .bot-container {
       height: 100%;
       span {
@@ -52,6 +57,7 @@
     img {
       width: 360px;
       height: 290px;
+      object-fit: cover;
     }
     .bot-container {
       height: 100%;
@@ -138,6 +144,7 @@
     img {
       width: 231px;
       height: 224px;
+      object-fit: cover;
     }
     .bot-container {
       margin: auto;
