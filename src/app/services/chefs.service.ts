@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable, firstValueFrom } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 
 import { ICard } from '../models/card.model';
 import { IChefOfTheWeek } from '../models/chefOfTheWeek.model';
@@ -11,7 +12,7 @@ export class ChefsService {
 
   getChefOfTheWeek(): Observable<IChefOfTheWeek> {
     const chefOfTheWeek = this.http
-      .get(`http://localhost:3500/api/v1/chefs/chef-of-the-week`)
+      .get(`${environment.url}/chefs/chef-of-the-week`)
       .pipe(
         map((chefData: any) => {
           const chef: IChefOfTheWeek = {
@@ -29,7 +30,7 @@ export class ChefsService {
 
   getChefsRestaurants(chefId: string): Observable<ICard[]> {
     const chefsRestaurants = this.http
-      .get(`http://localhost:3500/api/v1/chefs/restaurants/${chefId}`)
+      .get(`${environment.url}/chefs/restaurants/${chefId}`)
       .pipe(
         map((data: any) => {
           const restaurants: ICard[] = [];

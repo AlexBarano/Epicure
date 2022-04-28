@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 
 import { ICard } from '../models/card.model';
 
@@ -10,7 +11,7 @@ export class RestaurantsService {
 
   getPopularRestaurant(): Observable<ICard[]> {
     return this.http
-      .get('http://localhost:3500/api/v1/restaurants/popular-restaurants')
+      .get(`${environment.url}/restaurants/popular-restaurants`)
       .pipe(
         map((restaurantsData: any) => {
           const popularRestaurants: any[] = restaurantsData.popularRestaurants;
